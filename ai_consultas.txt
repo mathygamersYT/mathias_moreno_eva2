@@ -1,0 +1,54 @@
+promp: dame recomendaciones sobre buenas prácticas
+de estructuración semántica de manera censilla
+
+
+Para aplicar estas mejoras de forma eficiente, lo ideal es usar prompts que obliguen a la IA a analizar la **función** de cada elemento antes de sugerir el código.
+
+Como ya tienes experiencia con proyectos de programación en **Inacap**, estos prompts te ayudarán a limpiar el código de tus trabajos o proyectos personales de manera profesional.
+
+---
+
+## 1. Para refactorizar código desordenado ("Div-itis")
+Si tienes un código lleno de `<div>` y quieres transformarlo a HTML5 semántico:
+
+> "Actúa como un desarrollador Frontend experto. Te proporcionaré un fragmento de código HTML que abusa del uso de etiquetas `<div>`. Tu tarea es refactorizarlo utilizando etiquetas semánticas de HTML5 (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`). Asegúrate de mantener la misma jerarquía y explicar por qué elegiste cada etiqueta en lugar del `<div>` original. Aquí está el código: [PEGA TU CÓDIGO]"
+
+---
+
+## 2. Para estructurar un proyecto desde cero
+Si vas a empezar un nuevo módulo o página y quieres el "esqueleto" perfecto:
+
+> "Genera la estructura base de una página web para [Describir el proyecto, ej: un panel de control de servidor o un blog de tecnología]. Utiliza una estructura semántica estricta. Incluye:
+> * Un `<h1>` único.
+> * Una jerarquía lógica de encabezados (`<h2>`, `<h3>`).
+> * Diferenciación clara entre elementos de navegación (`<nav>`) y acciones (`<button>`).
+> * Uso de `<section>` y `<article>` donde corresponda.
+> No incluyas estilos CSS todavía, solo el HTML estructurado y accesible."
+
+---
+
+## 3. Para validar la jerarquía de títulos (SEO y Accesibilidad)
+Ideal para revisar si tus trabajos de analista programador cumplen con los estándares:
+
+> "Analiza el siguiente esquema de títulos de mi página web. Indica si hay saltos de nivel incorrectos (ej. de `<h1>` a `<h3>`) y sugiéreme una estructura corregida que sea lógica tanto para SEO como para lectores de pantalla: [PEGA TUS TÍTULOS O TU HTML]"
+
+---
+
+## 4. Para corregir la accesibilidad en formularios y botones
+Los formularios suelen ser lo más difícil de hacer semántico:
+
+> "Revisa este formulario HTML. Asegúrate de que cada input tenga su `<label>` correctamente asociado, que los botones usen la etiqueta `<button>` y no `<a>`, y que el conjunto esté agrupado semánticamente (usando `<fieldset>` y `<legend>` si es necesario). El objetivo es que sea 100% accesible para lectores de pantalla. Código: [PEGA TU CÓDIGO]"
+
+---
+
+## 5. Para convertir un diseño visual a estructura mental
+Si tienes una imagen o una idea de cómo se ve el sitio pero no sabes qué etiquetas usar:
+
+> "Tengo un diseño que consiste en una barra superior de navegación, un banner principal de héroe, una cuadrícula de tres servicios destacados, un testimonio lateral y un pie de página con enlaces sociales. ¿Qué etiquetas semánticas de HTML5 debería usar para cada una de estas partes para seguir las mejores prácticas?"
+
+---
+
+### Un pequeño consejo extra para tus proyectos en Inacap:
+Si estás usando frameworks como **React** o **Vue**, estos mismos principios aplican. A veces uno se olvida de la semántica por estar pensando en la lógica de los componentes, pero envolver tu componente en una `<section>` en lugar de un `<div>` hace una diferencia enorme en el resultado profesional.
+
+¿Tienes algún fragmento de código que quieras que revisemos ahora mismo con estos criterios?
