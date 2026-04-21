@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" role="img" aria-labelledby="consultoriaTitle">
+  <title id="consultoriaTitle">Ilustración de consultoría</title>
+  <rect width="600" height="400" fill="#f0f9ff" />
+  <circle cx="180" cy="200" r="100" fill="#05ffea" opacity="0.15" />
+  <path d="M150 180 h120 v80 h-120 z" fill="#1d3557" />
+  <path d="M180 210 h60" stroke="#ffffff" stroke-width="10" stroke-linecap="round" />
+  <text x="50%" y="330" font-size="32" fill="#1d3557" text-anchor="middle">Consultoría</text>
+</svg>
