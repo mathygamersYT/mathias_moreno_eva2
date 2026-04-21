@@ -1,0 +1,47 @@
+Cambios aplicados (mapeo div -> etiqueta semántica) ---------------------------------
+
+1) <div class="header">  ->  <header>
+   Razon: representa la cabecera global del documento que incluye marca y navegación; <header> comunica esa finalidad a agentes y lectores de pantalla.
+
+2) <div class="logo">  ->  <div class="brand"> (se mantiene como contenedor visual)
+   Razon: el logo no requiere etiqueta semántica especial; queda dentro de <header>.
+
+3) <div class="nav"> y <div class="nav-item">  ->  <nav> + <ul><li>
+   Razon: <nav> indica bloques de navegación; usar lista mejora orden semántico y accesibilidad.
+
+4) <div class="hero">  ->  <section class="hero">
+   Razon: el hero es una sección de contenido destacada dentro del <main>.
+
+5) <div class="hero-content"> texto  ->  se mantiene como contenedor simple (div) o puede ser directo
+   Razon: mantiene estructura y facilita estilos; no añade significado semántico extra.
+
+6) <div class="hero-image"> <img> -> <figure> + <img>
+   Razon: <figure> agrupa medios relacionados con contenido y permite <figcaption> si es necesario.
+
+7) <div class="main">  ->  <main>
+   Razon: indica la porción principal del documento (solo un <main> por página).
+
+8) <div class="services">  ->  <section class="services">
+   Razon: agrupa el conjunto de servicios como una sección temática.
+
+9) <div class="service">  ->  <article class="service">
+   Razon: cada servicio es una unidad autónoma que podría distribuirse o resumirse; <article> es apropiado para ítems independientes.
+
+10) <div class="sidebar">  ->  <aside>
+    Razon: contenido complementario/relacionado que no es central al flujo principal; <aside> comunica esto.
+
+11) <div class="widget">  ->  <section> o <article> (en el ejemplo se usó <section> con encabezado)
+    Razon: widgets son bloques temáticos; cuando no son independientes para distribución, <section> es adecuada.
+
+12) <div class="footer">  ->  <footer>
+    Razon: pie de página del documento o sección; comunica metadatos y enlaces relacionados.
+
+Notas de accesibilidad y jerarquía:
+- Mantener un único <h1> dentro del flujo principal (hero). Los servicios usan <h2> para mantener jerarquía.
+- Imágenes: se añadió texto en atributo alt descriptivo para compatibilidad con lectores de pantalla.
+- Navegación: se usó <nav> y listas para mejorar la navegación por teclado y lectores.
+- Sidebar: se colocó como <aside> fuera de <section> de servicios pero dentro de <main>, indicando contenido complementario.
+
+Si quieres, puedo:
+- Aplicar este refactor directamente a tu archivo HTML concreto si lo pegas aquí.
+- Generar un diff/patch aplicable con los cambios reales al archivo.

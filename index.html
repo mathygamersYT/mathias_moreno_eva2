@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Landing Page - MiMarca</title>
+  <style>
+    :root{--accent:#0066cc;--bg:#ffffff;--text:#111;--muted:#6b7280;--maxw:1100px}
+    body{font-family:Arial,Helvetica,sans-serif;margin:0;line-height:1.6;color:var(--text);background:var(--bg)}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 1rem}
+    header{background:#fff;border-bottom:1px solid #e6e9ec;padding:.75rem 0}
+    .brand h1{margin:0;font-size:1.25rem;color:var(--accent)}
+    nav ul{list-style:none;padding:0;margin:0;display:flex;gap:1rem;align-items:center}
+    nav a{text-decoration:none;color:inherit}
+    .hero{Padding:3rem 0;background:linear-gradient(180deg,#eef 0%,#fff 100%);display:flex;gap:1rem;align-items:center}
+    .hero-img{flex:1}
+    .hero-content{flex:1}
+    .hero img{width:100%;height:auto;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+    .btn{background:var(--accent);color:#fff;padding:.75rem 1rem;border-radius:6px;text-decoration:none;display:inline-block}
+    a:focus,.btn:focus{outline:3px solid color-mix(in srgb, var(--accent) 40%, white);outline-offset:3px}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;padding:1.5rem 0}
+    .feature-card{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+    .feature-card img{width:100%;height:120px;object-fit:cover;border-radius:6px;margin-bottom:.5rem}
+    .services{background:#fff;padding:1rem;border-radius:8px;margin:1rem 0}
+    .small-muted{color:var(--muted)}
+    /* Form styles */
+    form{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+    .form-row{display:flex;gap:1rem;flex-wrap:wrap}
+    label{display:block;font-weight:600;margin-bottom:.25rem}
+    input[type="text"],input[type="email"],textarea{width:100%;padding:.5rem;border:1px solid #cbd5e1;border-radius:6px}
+    input:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent)}
+    .form-group{flex:1 1 240px}
+    table{width:100%;border-collapse:collapse;background:#fff;border-radius:6px;overflow:hidden}
+    th,td{border:1px solid #d6dbe0;padding:.75rem;text-align:center}
+    footer{background:#222;color:#fff;padding:1rem 0;margin-top:1.5rem}
+    .small-muted{color:#666;font-size:.95rem}
+    @media(max-width:700px){.hero{flex-direction:column}.hero-img,.hero-content{width:100%}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+      <div class="brand">
+        <h1>IT Progs</h1>
+        <div class="small-muted">Tu puerta de entrada a recursos útiles</div>
+      </div>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#features">Servicios</a></li>
+          <li><a href="#links">Enlaces</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero" aria-label="Hero">
+      <div class="container" style="display:flex;gap:1rem;align-items:center">
+        <div class="hero-content">
+          <h2>Bienvenido a IT progs</h2>
+          <p>Explora nuestras páginas y recursos — accede rápidamente a herramientas, documentación y soporte.</p>
+          <p><a class="btn" href="#links">Ir a Enlaces rápidos</a></p>
+        </div>
+        <div class="hero-img">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&auto=format&fit=crop&q=60" alt="Ilustración de bienvenida a MiMarca mostrando personas colaborando alrededor de una mesa">
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="container" aria-label="Servicios principales">
+      <h3>Servicios</h3>
+      <div class="features">
+        <article class="feature-card">
+          <img src="https://th.bing.com/th/id/R.7c63cf1b4fd36c667a8ae486321fcbdf?rik=hrqnTR5ymvBYmQ&pid=ImgRaw&r=0" alt="Imagen representativa de consultoría mostrando un esquema de planificación">
+          <h4>Consultoría</h4>
+          <p>Asesoría personalizada para implementar soluciones digitales a medida.</p>
+        </article>
+        <article class="feature-card">
+          <img src="https://media.istockphoto.com/id/1189940124/es/foto/c%C3%B3digo-de-desarrollo-de-c%C3%B3digo-fuente-javascript-lenguaje-de-script-para-el-desarrollo-de.jpg?s=1024x1024&w=is&k=20&c=oifIbOPieoJNTPawFilvCPOAvhuOjnBWvuL6sRmHv2k=" alt="Imagen representativa de desarrollo con código en pantalla">
+          <h4>Desarrollo</h4>
+          <p>Construcción de sitios y aplicaciones con las últimas tecnologías web.</p>
+        </article>
+        <article class="feature-card">
+          <img src="https://media.istockphoto.com/id/1435220822/photo/african-american-software-developer.jpg?s=612x612&w=is&k=20&c=YVabh542dMwJwIilxKe75c0VsYf12FJJ12RvZygSZug=" alt="Imagen representativa de soporte técnico con iconos de ayuda">
+          <h4>Soporte</h4>
+          <p>Mantenimiento y soporte continuo para mantener todo funcionando.</p>
+        </article>
+      </div>
+
+      <div class="services" aria-label="Lista de servicios">
+        <h4>Lista detallada de servicios</h4>
+        <ul>
+          <li>Auditoría técnica y recomendaciones de optimización (SEO, performance).</li>
+          <li>Integración de APIs y servicios de terceros (pagos, analítica, CRM).</li>
+          <li>Diseño UI/UX y prototipado para productos digitales.</li>
+          <li>Despliegue y automatización (CI/CD) en la nube.</li>
+          <li>Capacitaciones y documentación para equipos internos.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="links" class="container" aria-label="Enlaces rápidos">
+      <h3>Enlaces rápidos (tabla 3x3)</h3>
+      <p class="small-muted">Haz clic en cualquiera para abrir el recurso en una nueva pestaña.</p>
+      <table>
+        <tbody>
+          <tr>
+            <td><a href="https://www.google.com" target="_blank" rel="noopener">Google</a></td>
+            <td><a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN Web Docs</a></td>
+            <td><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></td>
+          </tr>
+          <tr>
+            <td><a href="https://stackoverflow.com" target="_blank" rel="noopener">Stack Overflow</a></td>
+            <td><a href="https://www.wikipedia.org" target="_blank" rel="noopener">Wikipedia</a></td>
+            <td><a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a></td>
+          </tr>
+          <tr>
+            <td><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></td>
+            <td><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></td>
+            <td><a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="about" class="container" aria-label="Sobre nosotros">
+      <h3>Sobre nosotros</h3>
+      <p>ITprogs reúne recursos, servicios y guías para ayudarte a lanzar y mantener productos digitales.</p>
+      <img src="https://via.placeholder.com/900x250?text=Equipo+MiMarca" alt="Foto del equipo de MiMarca colaborando en proyecto" style="width:100%;border-radius:8px;margin-top:1rem">
+    </section>
+
+    <section id="contact" class="container" aria-label="Contacto">
+      <h3>Contacto</h3>
+      <p>Escríbenos para más información o para solicitar un servicio.</p>
+      <form action="#" method="post" aria-describedby="contact-desc">
+        <p id="contact-desc" class="small-muted">Los campos marcados con * son obligatorios.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Nombre completo *</label>
+            <input id="name" name="name" type="text" required placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico *</label>
+            <input id="email" name="email" type="email" required placeholder="tu@ejemplo.com">
+          </div>
+        </div>
+        <div class="form-group" style="margin-top:.75rem">
+          <label for="message">Mensaje *</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos cómo podemos ayudarte"></textarea>
+        </div>
+        <p style="margin-top:.75rem"><button class="btn" type="submit">Enviar mensaje</button></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
+      <small>© 2026 IT progs. Todos los derechos reservados.</small>
+      <nav aria-label="Redes sociales">
+        <ul style="display:flex;gap:0.5rem;margin:0;padding:0;list-style:none">
+          <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></li>
+          <li><a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
