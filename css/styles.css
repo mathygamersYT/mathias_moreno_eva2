@@ -190,22 +190,41 @@ section[tabindex="-1"]:focus {
 /* Table for quick links */
 .table-wrapper {
   overflow-x: auto;
+  padding: 0.5rem 0;
 }
 
 table {
   width: 100%;
-  min-width: 520px;
-  border-collapse: collapse;
-  background: #fff;
-  border-radius: 6px;
-  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 1rem;
+  background: transparent;
 }
 
-th,
 td {
-  border: 1px solid #d6dbe0;
-  padding: .75rem;
+  border: none;
+  padding: 0;
+  width: 33.33%;
   text-align: center;
+}
+
+td a {
+  display: block;
+  padding: 1.5rem 1rem;
+  background: #fff;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #e2e8f0;
+}
+
+td a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 /* About section image */
