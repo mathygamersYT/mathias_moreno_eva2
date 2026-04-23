@@ -2,7 +2,7 @@
 
 Landing page del proyecto **IT Progs** desarrollada con HTML, CSS y JavaScript vanilla.
 
-La rama **`arcane`** contiene una variante lista para ejecutarse con Docker usando `nginx`.
+La rama **`arcane`** contiene una variante lista para ejecutarse con `docker compose` usando directamente `nginx:alpine`.
 
 ## Requisitos
 
@@ -32,7 +32,7 @@ git pull origin arcane
 Desde la raíz del proyecto:
 
 ```bash
-docker compose up --build
+docker compose up
 ```
 
 Luego abre:
@@ -47,26 +47,6 @@ Para detenerlo:
 docker compose down
 ```
 
-## Ejecutar con Docker manual
-
-Construir la imagen:
-
-```bash
-docker build -t arcane .
-```
-
-Levantar el contenedor:
-
-```bash
-docker run --rm -p 8080:80 arcane
-```
-
-Abrir en el navegador:
-
-```text
-http://localhost:8080
-```
-
 ## Estructura principal
 
 ```text
@@ -76,15 +56,14 @@ http://localhost:8080
 ├── images/
 ├── nginx/
 │   └── default.conf
-├── .dockerignore
-├── Dockerfile
 ├── docker-compose.yml
 └── README.md
 ```
 
 ## Notas
 
-- Esta variante sirve el sitio estático con `nginx`.
+- Esta variante sirve el sitio estático con la imagen `nginx:alpine`.
+- `docker-compose.yml` monta `index.html`, `css/`, `js/`, `images/` y la config de `nginx` como volúmenes de solo lectura.
 - El contenedor expone el puerto `80` internamente y se publica como `8080` en local.
 - Si quieres cambiar el puerto local, edita `docker-compose.yml`.
 
