@@ -3,7 +3,7 @@ services:
     image: nginx:alpine
     container_name: web-page
     ports:
-      - "8080:80"
+      - "18180:80"
     volumes:
       - ./index.html:/usr/share/nginx/html/index.html:ro
       - ./css:/usr/share/nginx/html/css:ro
