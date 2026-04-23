@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Landing Page - MiMarca</title>
+  <title>Landing Page - IT Progs</title>
   <!-- Enlaces a CSS y JS del proyecto -->
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/scripts.js" defer></script>
@@ -21,6 +21,7 @@
           <li><a href="#hero">Inicio</a></li>
           <li><a href="#features">Servicios</a></li>
           <li><a href="#links">Enlaces</a></li>
+          <li><a href="#about">Sobre nosotros</a></li>
           <li><a href="#contact">Contacto</a></li>
         </ul>
       </nav>
@@ -30,21 +31,21 @@
   <!-- Contenido principal de la página -->
   <main>
     <!-- Sección Hero: bienvenida e introducción -->
-    <section id="hero" class="hero" aria-label="Hero">
+    <section id="hero" class="hero" aria-label="Hero" tabindex="-1">
       <div class="container hero-inner">
         <div class="hero-content">
-          <h2>Bienvenido a IT progs</h2>
+          <h2>Bienvenido a IT Progs</h2>
           <p>Explora nuestras páginas y recursos — accede rápidamente a herramientas, documentación y soporte.</p>
           <p><a class="btn" href="#links">Ir a Enlaces rápidos</a></p>
         </div>
-        <div class="hero-img">
-          <img src="images/hero.svg" alt="Ilustración de bienvenida a MiMarca mostrando personas colaborando alrededor de una mesa">
-        </div>
+        <figure class="hero-img">
+          <img src="images/hero.svg" alt="Ilustración de bienvenida a IT Progs mostrando personas colaborando alrededor de una mesa">
+        </figure>
       </div>
     </section>
 
     <!-- Sección de servicios principales -->
-    <section id="features" class="container" aria-label="Servicios principales">
+    <section id="features" class="container" aria-label="Servicios principales" tabindex="-1">
       <h3>Servicios</h3>
       <div class="features">
         <article class="feature-card">
@@ -77,39 +78,41 @@
     </section>
 
     <!-- Sección de enlaces rápidos -->
-    <section id="links" class="container" aria-label="Enlaces rápidos">
+    <section id="links" class="container" aria-label="Enlaces rápidos" tabindex="-1">
       <h3>Enlaces rápidos (tabla 3x3)</h3>
       <p class="small-muted">Haz clic en cualquiera para abrir el recurso en una nueva pestaña.</p>
-      <table>
-        <tbody>
-          <tr>
-            <td><a href="https://www.google.com" target="_blank" rel="noopener">Google</a></td>
-            <td><a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN Web Docs</a></td>
-            <td><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://stackoverflow.com" target="_blank" rel="noopener">Stack Overflow</a></td>
-            <td><a href="https://www.wikipedia.org" target="_blank" rel="noopener">Wikipedia</a></td>
-            <td><a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a></td>
-          </tr>
-          <tr>
-            <td><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></td>
-            <td><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></td>
-            <td><a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-wrapper">
+        <table>
+          <tbody>
+            <tr>
+              <td><a href="https://www.google.com" target="_blank" rel="noopener">Google</a></td>
+              <td><a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN Web Docs</a></td>
+              <td><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></td>
+            </tr>
+            <tr>
+              <td><a href="https://stackoverflow.com" target="_blank" rel="noopener">Stack Overflow</a></td>
+              <td><a href="https://www.wikipedia.org" target="_blank" rel="noopener">Wikipedia</a></td>
+              <td><a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a></td>
+            </tr>
+            <tr>
+              <td><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></td>
+              <td><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></td>
+              <td><a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <!-- Sección sobre la empresa y el equipo -->
-    <section id="about" class="container" aria-label="Sobre nosotros">
+    <section id="about" class="container" aria-label="Sobre nosotros" tabindex="-1">
       <h3>Sobre nosotros</h3>
-      <p>ITprogs reúne recursos, servicios y guías para ayudarte a lanzar y mantener productos digitales.</p>
-      <img src="images/about-team.svg" alt="Foto del equipo de MiMarca colaborando en proyecto" class="about-img">
+      <p>IT Progs reúne recursos, servicios y guías para ayudarte a lanzar y mantener productos digitales.</p>
+      <img src="images/about-team.svg" alt="Foto del equipo de IT Progs colaborando en proyecto" class="about-img">
     </section>
 
     <!-- Sección de contacto con formulario -->
-    <section id="contact" class="container" aria-label="Contacto">
+    <section id="contact" class="container" aria-label="Contacto" tabindex="-1">
       <h3>Contacto</h3>
       <p>Escríbenos para más información o para solicitar un servicio.</p>
       <form action="#" method="post" aria-describedby="contact-desc">
@@ -136,7 +139,7 @@
   <!-- Pie de página con enlaces sociales -->
   <footer>
     <div class="container footer-inner">
-      <small>© 2026 IT progs. Todos los derechos reservados.</small>
+      <small>© 2026 IT Progs. Todos los derechos reservados.</small>
       <nav aria-label="Redes sociales" class="footer-nav">
         <ul>
           <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></li>

@@ -1,6 +1,6 @@
 /* --- CSS Variables and Base Reset --- */
 :root {
-  --accent: #05ffea;
+  --accent: #00897b;
   --bg: #ffffff;
   --text: #111;
   --muted: #6b7280;
@@ -78,6 +78,10 @@ nav a {
   flex: 1;
 }
 
+.hero-img {
+  margin: 0;
+}
+
 .hero img {
   width: 100%;
   height: auto;
@@ -93,6 +97,10 @@ nav a {
   border-radius: 6px;
   text-decoration: none;
   display: inline-block;
+}
+
+.btn:hover {
+  background: #006f64;
 }
 
 a:focus,
@@ -171,13 +179,22 @@ textarea:focus {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
+section[tabindex="-1"]:focus {
+  outline: none;
+}
+
 .form-group {
   flex: 1 1 240px;
 }
 
 /* Table for quick links */
+.table-wrapper {
+  overflow-x: auto;
+}
+
 table {
   width: 100%;
+  min-width: 520px;
   border-collapse: collapse;
   background: #fff;
   border-radius: 6px;
