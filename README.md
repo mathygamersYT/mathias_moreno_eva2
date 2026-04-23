@@ -10,12 +10,14 @@ Landing page del proyecto **IT Progs** desarrollada con HTML, CSS y JavaScript v
 │   └── styles.css      # Estilos del sitio
 ├── js/
 │   └── scripts.js      # Funcionalidad JavaScript
-├── images/             # Imágenes y SVGs del sitio
-│   ├── hero.svg
-│   ├── about-team.svg
-│   ├── feature-consultoria.svg
-│   ├── feature-desarrollo.svg
-│   └── feature-soporte.svg
+├── images/             # Imágenes del sitio
+│   ├── hero-team.jpg
+│   ├── about-team.jpg
+│   ├── feature-consultoria.jpg
+│   ├── feature-desarrollo.jpg
+│   ├── feature-soporte.jpg
+│   ├── favicon.ico
+│   └── old/            # SVGs antiguos conservados
 ├── docs/               # Documentación del proyecto
 │   ├── ai_consultas.txt
 │   └── changes_aplicados.txt
