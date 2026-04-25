@@ -4,20 +4,25 @@ Todas fueron descargadas desde Unsplash y marcadas como gratuitas bajo la Unspla
 
 - images/hero-team.jpg
   Fuente: https://unsplash.com/photos/team-collaborating-on-laptops-in-modern-office-N3Bf0ArT5J0
+  Imagen directa: https://images.unsplash.com/photo-1774600134168-b9ebd714e4e1?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&q=80&w=1600
   Autor: Fiqih Alfarish
 
 - images/feature-consultoria.jpg
   Fuente: https://unsplash.com/photos/two-women-working-together-on-a-laptop-and-notebook-JD7PGIopODE
+  Imagen directa: https://images.unsplash.com/photo-1768876798766-02f679b1831d?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&q=80&w=1200
   Autor: Cabri Caldwell
 
 - images/feature-desarrollo.jpg
   Fuente: https://unsplash.com/photos/computer-screen-displaying-lines-of-code-5sLNGV2EFRM
+  Imagen directa: https://images.unsplash.com/photo-1770734360042-676ef707d022?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&q=80&w=1200
   Autor: Harshit Katiyar
 
 - images/feature-soporte.jpg
   Fuente: https://unsplash.com/photos/a-person-is-holding-a-headset-over-a-laptop-iUs7kqJ7vh4
+  Imagen directa: https://images.unsplash.com/photo-1695820815944-ddd5b3743ee9?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&q=80&w=1200
   Autor: Karol
 
 - images/about-team.jpg
   Fuente: https://unsplash.com/photos/four-people-in-a-room-looking-at-a-laptop-PNOJt8k-MO8
+  Imagen directa: https://images.unsplash.com/photo-1768310489951-a0a35cb52d56?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&q=80&w=1600
   Autor: Gabriel Weyand
