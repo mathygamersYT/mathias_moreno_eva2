@@ -1,41 +1,89 @@
-# IT Progs — Landing Page (EVA 1)
+# IT Progs - Landing Page
 
-Landing page del proyecto **IT Progs** desarrollada con HTML, CSS y JavaScript vanilla.
+Landing page estatica para **IT Progs**, creada con HTML, CSS y JavaScript vanilla como parte de la EVA 1.
 
-La rama **`arcane`** contiene una variante lista para ejecutarse con `docker compose` usando Nginx.
+El proyecto incluye secciones informativas, enlaces utiles y formularios de **registro** y **login** con validaciones en el navegador.
 
-## Requisitos
+## Funcionalidades
 
-- Git
-- Docker Desktop o Docker Engine
-- Puerto `18180` disponible en tu máquina
+- Navegacion interna con scroll suave.
+- Seccion hero con imagen principal.
+- Tarjetas de servicios.
+- Tabla de enlaces rapidos a herramientas para desarrollo.
+- Formulario de registro con validacion de:
+  - usuario obligatorio
+  - email con formato valido
+  - password de minimo 8 caracteres
+  - confirmacion de password identica
+- Formulario de login con validacion de campos obligatorios y formato correcto.
+- Variante Docker en la rama `arcane`, servida con Nginx.
 
-## Levantar la versión Docker (`arcane`)
+## Tecnologias
 
-Si todavía no tienes el proyecto:
+- HTML5
+- CSS3
+- JavaScript vanilla
+- Docker Compose
+- Nginx
+
+## Estructura
+
+```text
+.
+|-- index.html
+|-- css/
+|   `-- styles.css
+|-- js/
+|   |-- app.js
+|   `-- scripts.js
+|-- images/
+|-- nginx/
+|   |-- Dockerfile
+|   `-- default.conf
+|-- docker-compose.yml
+`-- README.md
+```
+
+## Uso Local
+
+Puedes abrir `index.html` directamente en el navegador.
+
+Tambien puedes levantar un servidor local simple desde la raiz del proyecto:
+
+```bash
+python -m http.server 8000
+```
+
+Luego abre:
+
+```text
+http://localhost:8000
+```
+
+## Uso Con Docker
+
+La rama `arcane` incluye configuracion para ejecutar el sitio con Docker Compose.
+
+Clona el repositorio y entra al proyecto:
 
 ```bash
 git clone https://github.com/mathygamersYT/mathias_moreno_eva1.git
 cd mathias_moreno_eva1
-git checkout arcane
 ```
 
-Si ya tienes el proyecto clonado:
+Cambia a la rama `arcane`:
 
 ```bash
 git checkout arcane
-git pull origin arcane
 ```
 
-## Ejecutar con Docker Compose
-
-Desde la raíz del proyecto:
+Levanta el contenedor:
 
 ```bash
 docker compose up --build
 ```
 
-Luego abre:
+Abre el sitio en:
 
 ```text
 http://localhost:18180
@@ -47,25 +95,12 @@ Para detenerlo:
 docker compose down
 ```
 
-## Estructura principal
-
-```text
-├── index.html
-├── css/
-├── js/
-├── images/
-├── nginx/
-│   └── default.conf
-├── docker-compose.yml
-└── README.md
-```
-
 ## Notas
 
-- Esta variante construye una imagen local de Nginx con `index.html`, `css/`, `js/`, `images/` y la config de `nginx` incluidos dentro del contenedor.
-- El contenedor expone el puerto `80` internamente y se publica como `18180` en local.
-- Si quieres cambiar el puerto local, edita `docker-compose.yml`.
+- El contenedor usa Nginx para servir los archivos estaticos.
+- El puerto interno `80` se publica como `18180` en la maquina local.
+- Los formularios validan datos en frontend; no almacenan usuarios ni contrasenas.
 
 ## Autor
 
-Mathias Moreno — INACAP
+aki - INACAP
