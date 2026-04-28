@@ -119,27 +119,38 @@
 
     <!-- Sección de contacto con formulario -->
     <section id="contact" class="container" aria-label="Contacto" tabindex="-1">
-      <h3>Contacto</h3>
-      <p>Escríbenos para más información o para solicitar un servicio.</p>
-      <form action="#" method="post" aria-describedby="contact-desc">
-        <p id="contact-desc" class="small-muted">Los campos marcados con * son obligatorios.</p>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Nombre completo *</label>
-            <input id="name" name="name" type="text" required placeholder="Tu nombre">
-          </div>
-          <div class="form-group">
-            <label for="email">Correo electrónico *</label>
-            <input id="email" name="email" type="email" required placeholder="tu@ejemplo.com">
-          </div>
-        </div>
-        <div class="form-group mt-small">
-          <label for="message">Mensaje *</label>
-          <textarea id="message" name="message" rows="5" required
-            placeholder="Cuéntanos cómo podemos ayudarte"></textarea>
-        </div>
-        <p class="mt-small"><button class="btn" type="submit">Enviar mensaje</button></p>
-      </form>
+      <h3>Formularios</h3>
+      <div class="forms-grid">
+        <form id="registroForm" novalidate>
+          <h4>Registro</h4>
+          <label for="usuarioRegistro">Usuario</label>
+          <input type="text" id="usuarioRegistro" placeholder="Usuario">
+
+          <label for="emailRegistro">Email</label>
+          <input type="email" id="emailRegistro" placeholder="correo@ejemplo.com">
+
+          <label for="passwordRegistro">Contraseña</label>
+          <input type="password" id="passwordRegistro" placeholder="Mínimo 8 caracteres">
+
+          <label for="confirmarPassword">Confirmación de Contraseña</label>
+          <input type="password" id="confirmarPassword" placeholder="Repite tu contraseña">
+
+          <button type="submit" class="btn">Registrarse</button>
+          <p id="mensajeRegistro" class="form-message"></p>
+        </form>
+
+        <form id="loginForm" novalidate>
+          <h4>Login</h4>
+          <label for="emailLogin">Email</label>
+          <input type="email" id="emailLogin" placeholder="correo@ejemplo.com">
+
+          <label for="passwordLogin">Contraseña</label>
+          <input type="password" id="passwordLogin" placeholder="Tu contraseña">
+
+          <button type="submit" class="btn">Ingresar</button>
+          <p id="mensajeLogin" class="form-message"></p>
+        </form>
+      </div>
     </section>
   </main>
 
@@ -156,6 +167,7 @@
       </nav>
     </div>
   </footer>
+  <script src="js/app.js"></script>
 </body>
 
 </html>

@@ -179,12 +179,22 @@ a:focus,
 }
 
 /* Contact form styles */
+.forms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
 form {
   background: var(--bg-card);
   padding: 1.25rem;
   border-radius: 8px;
   border: 1px solid var(--border);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+form h4 {
+  margin-top: 0;
 }
 
 .form-row {
@@ -202,9 +212,11 @@ label {
 
 input[type="text"],
 input[type="email"],
+input[type="password"],
 textarea {
   width: 100%;
   padding: .5rem .75rem;
+  margin-bottom: .75rem;
   border: 1px solid var(--border);
   border-radius: 6px;
   background: var(--bg-surface);
@@ -221,6 +233,20 @@ textarea:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.form-message {
+  min-height: 1.5rem;
+  margin: .75rem 0 0;
+  font-weight: 600;
+}
+
+.form-message.error {
+  color: #ff8a8a;
+}
+
+.form-message.success {
+  color: var(--accent);
 }
 
 section[tabindex="-1"]:focus {
