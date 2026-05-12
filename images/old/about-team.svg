@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" role="img" aria-labelledby="aboutTeamTitle">
-  <title id="aboutTeamTitle">Equipo colaborando en proyecto</title>
-  <rect width="900" height="300" fill="#eef2ff" />
-  <rect x="100" y="70" width="220" height="160" rx="20" fill="#6366f1" />
-  <rect x="340" y="70" width="220" height="160" rx="20" fill="#38bdf8" />
-  <rect x="580" y="70" width="220" height="160" rx="20" fill="#34d399" />
-  <text x="50%" y="260" font-size="32" fill="#1e293b" text-anchor="middle">Equipo colaborando</text>
-</svg>

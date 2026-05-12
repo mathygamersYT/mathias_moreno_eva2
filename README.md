@@ -1,35 +1,21 @@
-# IT Progs - Landing Page
+# IT Progs - EVA 1
 
-Landing page estatica para **IT Progs**, desarrollada con HTML, CSS y JavaScript vanilla como parte de la EVA 1.
+Proyecto web para la evaluacion EVA 1 de Analista Programador.
 
-El sitio presenta servicios, recursos utiles para desarrollo y dos formularios funcionales con validaciones en frontend.
+La pagina mantiene la idea original de **IT Progs** como landing de recursos, servicios y contacto, incorporando los requisitos de la rubrica: carrusel manual, formularios, validacion en JavaScript puro, almacenamiento de usuarios en JSON y evidencia de uso de IA.
 
-## Funcionalidades
+## Archivos activos
 
-- Navegacion interna con scroll suave.
-- Seccion principal con imagen hero.
-- Tarjetas de servicios.
-- Tabla de enlaces rapidos a herramientas de desarrollo.
-- Formulario de registro con validacion de usuario, email, contrasena y confirmacion.
-- Formulario de login con validacion de email y contrasena.
-- Diseno responsive para escritorio y dispositivos moviles.
-
-## Tecnologias
-
-- HTML5
-- CSS3
-- JavaScript vanilla
-
-## Estructura Del Proyecto
+Estos son los archivos principales que usa la pagina:
 
 ```text
 .
 |-- index.html
-|-- css/
-|   `-- styles.css
-|-- js/
-|   |-- app.js
-|   `-- scripts.js
+|-- styles.css
+|-- script.js
+|-- server.js
+|-- usuarios.json
+|-- ia_consultas.txt
 |-- images/
 |   |-- hero-team.jpg
 |   |-- about-team.jpg
@@ -37,46 +23,51 @@ El sitio presenta servicios, recursos utiles para desarrollo y dos formularios f
 |   |-- feature-desarrollo.jpg
 |   |-- feature-soporte.jpg
 |   `-- favicon.ico
-|-- docs/
-|   |-- ai_consultas.txt
-|   `-- changes_aplicados.txt
 `-- README.md
 ```
 
-## Uso Local
+No se usan carpetas `css/` ni `js/` para la version final, porque la rubrica pide separar el codigo directamente en `index.html`, `styles.css` y `script.js`.
 
-La forma mas simple es abrir `index.html` directamente en el navegador.
+## Funcionalidades
 
-Tambien puedes levantar un servidor local desde la raiz del proyecto:
+- Carrusel visual con Bootstrap 5, controlado manualmente con JavaScript puro.
+- Popup de registro.
+- Popup de login.
+- Formulario de contacto.
+- Validacion manual de campos vacios, correo y texto peligroso basico.
+- Arreglo global `usuariosInscritos`.
+- Clase `Usuario`.
+- Funciones requeridas: `validarDatos()`, `cambiarImagen()` y `actualizarDOM()`.
+- Servidor local en Node para guardar usuarios en `usuarios.json`.
+
+## Uso local
+
+Ejecuta el servidor desde la raiz del proyecto:
 
 ```bash
-python -m http.server 8000
+node server.js
 ```
 
 Luego abre:
 
 ```text
-http://localhost:8000
+http://localhost:3000
 ```
 
-## Formularios
+El servidor entrega la pagina y habilita la ruta `/api/usuarios` para leer y escribir en `usuarios.json`.
 
-El archivo `js/app.js` contiene las validaciones principales:
+## Evidencia IA
 
-- email con formato valido mediante expresion regular
-- contrasena de minimo 8 caracteres
-- confirmacion de contrasena igual a la original
-- campos obligatorios en registro y login
+El archivo `ia_consultas.txt` contiene los prompts simulados usados para crear las validaciones, el carrusel y los ajustes principales del proyecto.
 
-## Rama Docker
+## Control de versiones
 
-La rama `arcane` contiene una variante preparada para ejecutarse con Docker Compose y Nginx.
+La rubrica solicita al menos tres commits:
 
-```bash
-git checkout arcane
-docker compose up --build
+```text
+Estructura
+Logica JS
+Final
 ```
 
-## Autor
-
-aki - INACAP
+En el historial del repositorio se encuentran esos commits aplicados en la rama `main`.
