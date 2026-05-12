@@ -37,7 +37,6 @@ const imagenesCarrusel = [
 ];
 
 let indiceImagenActual = 0;
-let carouselTimer = null;
 
 // Punto de arranque: primero se conectan eventos, luego se cargan datos y se pinta el DOM.
 document.addEventListener("DOMContentLoaded", async () => {
@@ -46,8 +45,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   configurarFormularios();
   await cargarUsuarios();
   actualizarDOM();
-  // Inicia avance automatico del carrusel
-  startAutoAdvance();
 });
 
 function configurarMenuMovil() {
@@ -308,25 +305,7 @@ function actualizarCarrusel() {
     });
     indicadoresDOM.appendChild(punto);
   });
-
-    // Reinicia el temporizador para que el auto-advance se mantenga tras interacciones manuales
-    startAutoAdvance();
 }
-
-  // Temporizador que avanza el carrusel automaticamente cada 5 segundos.
-  function startAutoAdvance() {
-    stopAutoAdvance();
-    carouselTimer = setInterval(() => {
-      cambiarImagen(1);
-    }, 5000);
-  }
-
-  function stopAutoAdvance() {
-    if (carouselTimer) {
-      clearInterval(carouselTimer);
-      carouselTimer = null;
-    }
-  }
 
 // Abre una capa flotante y manda el foco al primer campo para mejorar el flujo del usuario.
 function abrirPopup(idPopup, idPrimerCampo) {
