@@ -11,8 +11,11 @@ Estos son los archivos principales que usa la pagina:
 ```text
 .
 |-- index.html
-|-- styles.css
-|-- script.js
+|-- css/
+|   |-- styles.css
+|-- js/
+|   |-- script.js
+|-- docs/
 |-- server.js
 |-- usuarios.json
 |-- ia_consultas.txt
