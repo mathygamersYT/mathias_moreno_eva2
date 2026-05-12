@@ -3,92 +3,196 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Landing Page - IT Progs</title>
-  <!-- Favicon -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IT Progs | Recursos, Soporte y Hardware</title>
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <!-- Enlaces a CSS y JS del proyecto -->
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/scripts.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-  <!-- Encabezado principal del sitio -->
-  <header>
-    <div class="container header-inner">
-      <div class="brand">
-        <h1>IT Progs</h1>
-        <div class="small-muted">Tu puerta de entrada a recursos útiles</div>
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Principal">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#hero">IT Progs</a>
+
+        <div class="nav-actions ms-auto order-lg-3">
+          <button class="btn btn-outline-light btn-sm" id="abrirRegistro" type="button">Registro</button>
+          <button class="btn btn-accent btn-sm" id="abrirLogin" type="button">Login</button>
+        </div>
+
+        <button class="navbar-toggler ms-2 order-lg-4" id="menuButton" type="button" aria-controls="mainMenu"
+          aria-expanded="false" aria-label="Mostrar menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#features">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#links">Enlaces</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+          </ul>
+        </div>
       </div>
-      <nav aria-label="Principal">
-        <ul>
-          <li><a href="#hero">Inicio</a></li>
-          <li><a href="#features">Servicios</a></li>
-          <li><a href="#links">Enlaces</a></li>
-          <li><a href="#about">Sobre nosotros</a></li>
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
+    </nav>
   </header>
 
-  <!-- Contenido principal de la página -->
-  <main>
-    <!-- Sección Hero: bienvenida e introducción -->
-    <section id="hero" class="hero" aria-label="Hero" tabindex="-1">
-      <div class="container hero-inner">
-        <div class="hero-content">
-          <h2>Bienvenido a IT Progs</h2>
-          <p>Explora nuestras páginas y recursos — accede rápidamente a herramientas, documentación y soporte.</p>
-          <p><a class="btn" href="#links">Ir a Enlaces rápidos</a></p>
+  <section class="login-popup" id="loginPopup" aria-hidden="true" aria-labelledby="tituloLogin" role="dialog">
+    <div class="popup-panel">
+      <div class="d-flex justify-content-between align-items-start gap-3">
+        <div>
+          <p class="small-muted mb-1">Entrada y salida de datos</p>
+          <h2 id="tituloLogin">Login de usuarios</h2>
         </div>
-        <figure class="hero-img">
-          <img src="images/hero-team.jpg"
-            alt="Equipo de tecnología colaborando con laptops en una sala de reuniones">
-        </figure>
+        <button class="btn-close btn-close-white" id="cerrarLogin" type="button" aria-label="Cerrar login"></button>
+      </div>
+
+      <form id="formLogin" novalidate>
+        <div class="mb-3">
+          <label for="loginEmail" class="form-label">Correo electronico</label>
+          <input id="loginEmail" name="loginEmail" class="form-control" type="text" placeholder="tu@ejemplo.com">
+        </div>
+        <div class="mb-3">
+          <label for="loginPassword" class="form-label">Contrasena</label>
+          <input id="loginPassword" name="loginPassword" class="form-control" type="password"
+            placeholder="Tu contrasena">
+        </div>
+        <button class="btn btn-accent w-100" type="submit">Ingresar</button>
+        <div id="mensajeLogin" class="form-message mt-3" role="alert"></div>
+      </form>
+
+      <output id="salidaLogin" class="login-output" aria-live="polite">
+        Salida: esperando credenciales validas.
+      </output>
+    </div>
+  </section>
+
+  <section class="login-popup" id="registroPopup" aria-hidden="true" aria-labelledby="tituloInscripcion" role="dialog">
+    <div class="popup-panel">
+      <div class="d-flex justify-content-between align-items-start gap-3">
+        <div>
+          <p class="small-muted mb-1">Crear cuenta</p>
+          <h2 id="tituloInscripcion">Registro de usuarios</h2>
+        </div>
+        <button class="btn-close btn-close-white" id="cerrarRegistro" type="button"
+          aria-label="Cerrar registro"></button>
+      </div>
+
+      <form id="formInscripcion" novalidate>
+        <div class="mb-3">
+          <label for="registroNombre" class="form-label">Nombre completo</label>
+          <input id="registroNombre" name="registroNombre" class="form-control" type="text" placeholder="Tu nombre">
+        </div>
+        <div class="mb-3">
+          <label for="registroEmail" class="form-label">Correo electronico</label>
+          <input id="registroEmail" name="registroEmail" class="form-control" type="text"
+            placeholder="tu@ejemplo.com">
+        </div>
+        <div class="mb-3">
+          <label for="registroPassword" class="form-label">Contrasena</label>
+          <input id="registroPassword" name="registroPassword" class="form-control" type="password"
+            placeholder="Minimo 8 caracteres">
+        </div>
+        <div class="mb-3">
+          <label for="registroInteres" class="form-label">Interes principal</label>
+          <select id="registroInteres" name="registroInteres" class="form-select">
+            <option value="">Selecciona una opcion</option>
+            <option value="Desarrollo web">Desarrollo web</option>
+            <option value="Soporte tecnico">Soporte tecnico</option>
+            <option value="Ryzen 7800X3D y RX 7900 XTX">Ryzen 7800X3D y RX 7900 XTX</option>
+            <option value="Proxmox con Intel 125H">Proxmox con Intel 125H</option>
+          </select>
+        </div>
+        <button class="btn btn-accent w-100" type="submit">Crear usuario</button>
+        <div id="mensajeInscripcion" class="form-message mt-3" role="alert"></div>
+      </form>
+
+      <p id="salidaRegistro" class="registro-feedback" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <main>
+    <section id="hero" class="hero" tabindex="-1">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <p class="small-muted mb-2">Tu puerta de entrada a recursos utiles</p>
+            <h1>Bienvenido a IT Progs</h1>
+            <p class="lead">
+              Explora nuestras paginas y recursos para desarrollo, soporte, documentacion tecnica y proyectos de
+              infraestructura moderna.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-accent" href="#links">Ir a enlaces rapidos</a>
+              <button class="btn btn-outline-light" id="abrirRegistroHero" type="button">Crear cuenta</button>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <!-- Cambio: el carrusel manual se movio al hero para que aparezca junto a "Bienvenido a IT Progs". -->
+            <div class="carousel manual-carousel hero-carousel" aria-roledescription="carrusel"
+              aria-label="Galeria de hardware">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img id="imagenCarrusel" class="d-block w-100" src="" alt="">
+                  <div class="carousel-caption">
+                    <h3 id="tituloCarrusel"></h3>
+                    <p id="textoCarrusel"></p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" onclick="cambiarImagen(-1)"
+                aria-label="Imagen anterior">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" onclick="cambiarImagen(1)"
+                aria-label="Imagen siguiente">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div id="indicadoresCarrusel" class="carousel-dots" aria-label="Indicadores del carrusel"></div>
+              <p id="contadorCarrusel" class="mb-0 small-muted"></p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Sección de servicios principales -->
-    <section id="features" class="container" aria-label="Servicios principales" tabindex="-1">
-      <h3>Servicios</h3>
-      <div class="features">
-        <article class="feature-card">
-          <img src="images/feature-consultoria.jpg"
-            alt="Dos personas revisando una planificación junto a un laptop">
-          <h4>Consultoría</h4>
-          <p>Asesoría personalizada para implementar soluciones digitales a medida.</p>
+    <section id="features" class="container py-5" tabindex="-1" aria-label="Servicios principales">
+      <h2>Servicios</h2>
+      <div class="row g-4">
+        <article class="col-md-4">
+          <div class="feature-card h-100">
+            <img src="images/feature-consultoria.jpg" alt="Personas revisando una planificacion junto a un laptop">
+            <h3>Consultoria</h3>
+            <p>Asesoria personalizada para implementar soluciones digitales y mejorar procesos de trabajo.</p>
+          </div>
         </article>
-        <article class="feature-card">
-          <img src="images/feature-desarrollo.jpg" alt="Pantalla con código en un entorno de desarrollo">
-          <h4>Desarrollo</h4>
-          <p>Construcción de sitios y aplicaciones con las últimas tecnologías web.</p>
+        <article class="col-md-4">
+          <div class="feature-card h-100">
+            <img src="images/feature-desarrollo.jpg" alt="Pantalla con codigo en un entorno de desarrollo">
+            <h3>Desarrollo</h3>
+            <p>Construccion de sitios, aplicaciones y herramientas internas con tecnologias web actuales.</p>
+          </div>
         </article>
-        <article class="feature-card">
-          <img src="images/feature-soporte.jpg" alt="Audífonos sobre un escritorio con laptop y monitores">
-          <h4>Soporte</h4>
-          <p>Mantenimiento y soporte continuo para mantener todo funcionando.</p>
+        <article class="col-md-4">
+          <div class="feature-card h-100">
+            <img src="images/feature-soporte.jpg" alt="Audifonos sobre un escritorio con laptop y monitores">
+            <h3>Soporte</h3>
+            <p>Mantenimiento, documentacion y acompanamiento para que tus sistemas sigan funcionando.</p>
+          </div>
         </article>
-      </div>
-
-      <div class="services" aria-label="Lista de servicios">
-        <h4>Lista detallada de servicios</h4>
-        <ul>
-          <li>Auditoría técnica y recomendaciones de optimización (SEO, performance).</li>
-          <li>Integración de APIs y servicios de terceros (pagos, analítica, CRM).</li>
-          <li>Diseño UI/UX y prototipado para productos digitales.</li>
-          <li>Despliegue y automatización (CI/CD) en la nube.</li>
-          <li>Capacitaciones y documentación para equipos internos.</li>
-        </ul>
       </div>
     </section>
 
-    <!-- Sección de enlaces rápidos -->
-    <section id="links" class="container" aria-label="Enlaces rápidos" tabindex="-1">
-      <h3>Tabla de utlidades</h3>
-      <p class="small-muted">Haz clic en cualquiera para abrir el recurso en una nueva pestaña.</p>
-      <div class="table-wrapper">
-        <table>
+    <section id="links" class="container py-5" tabindex="-1" aria-label="Enlaces rapidos">
+      <h2>Tabla de utilidades</h2>
+      <p class="small-muted">Haz clic en cualquiera para abrir el recurso en una nueva pestana.</p>
+      <div class="table-responsive">
+        <table class="table utility-table align-middle">
           <tbody>
             <tr>
               <td><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></td>
@@ -101,65 +205,56 @@
               <td><a href="https://dev.to" target="_blank" rel="noopener">DEV Community</a></td>
             </tr>
             <tr>
-              <td><a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a></td>
-              <td><a href="https://aws.amazon.com/es/" target="_blank" rel="noopener">AWS</a></td>
+              <td><a href="https://www.proxmox.com" target="_blank" rel="noopener">Proxmox</a></td>
               <td><a href="https://www.docker.com" target="_blank" rel="noopener">Docker</a></td>
+              <td><a href="https://aws.amazon.com/es/" target="_blank" rel="noopener">AWS</a></td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- Sección sobre la empresa y el equipo -->
-    <section id="about" class="container" aria-label="Sobre nosotros" tabindex="-1">
-      <h3>Sobre nosotros</h3>
-      <p>IT Progs reúne recursos, servicios y guías para ayudarte a lanzar y mantener productos digitales.</p>
+    <section id="about" class="container py-5" tabindex="-1" aria-label="Sobre nosotros">
+      <h2>Sobre nosotros</h2>
+      <p>
+        IT Progs reune recursos, servicios y guias para ayudarte a lanzar y mantener productos digitales, con un foco
+        practico en documentacion, soporte e infraestructura.
+      </p>
       <img src="images/about-team.jpg" alt="Equipo de IT Progs revisando un proyecto en conjunto" class="about-img">
     </section>
 
-    <!-- Sección de contacto con formulario -->
-    <section id="contact" class="container" aria-label="Contacto" tabindex="-1">
-      <h3>Formularios</h3>
-      <div class="forms-grid">
-        <form id="registroForm" novalidate>
-          <h4>Registro</h4>
-          <label for="usuarioRegistro">Usuario</label>
-          <input type="text" id="usuarioRegistro" placeholder="Usuario">
-
-          <label for="emailRegistro">Email</label>
-          <input type="email" id="emailRegistro" placeholder="correo@ejemplo.com">
-
-          <label for="passwordRegistro">Contraseña</label>
-          <input type="password" id="passwordRegistro" placeholder="Mínimo 8 caracteres">
-
-          <label for="confirmarPassword">Confirmación de Contraseña</label>
-          <input type="password" id="confirmarPassword" placeholder="Repite tu contraseña">
-
-          <button type="submit" class="btn">Registrarse</button>
-          <p id="mensajeRegistro" class="form-message"></p>
-        </form>
-
-        <form id="loginForm" novalidate>
-          <h4>Login</h4>
-          <label for="emailLogin">Email</label>
-          <input type="email" id="emailLogin" placeholder="correo@ejemplo.com">
-
-          <label for="passwordLogin">Contraseña</label>
-          <input type="password" id="passwordLogin" placeholder="Tu contraseña">
-
-          <button type="submit" class="btn">Ingresar</button>
-          <p id="mensajeLogin" class="form-message"></p>
-        </form>
-      </div>
+    <section id="contact" class="container py-5" tabindex="-1" aria-label="Contacto">
+      <h2>Contacto</h2>
+      <p>Escribenos para mas informacion o para solicitar un servicio.</p>
+      <form id="formContacto" class="form-card" novalidate>
+        <p class="small-muted">Los campos son obligatorios.</p>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="contactoNombre" class="form-label">Nombre</label>
+            <input id="contactoNombre" name="contactoNombre" class="form-control" type="text" placeholder="Tu nombre">
+          </div>
+          <div class="col-md-6">
+            <label for="contactoEmail" class="form-label">Email</label>
+            <input id="contactoEmail" name="contactoEmail" class="form-control" type="text"
+              placeholder="tu@ejemplo.com">
+          </div>
+        </div>
+        <div class="mt-3">
+          <label for="contactoMensaje" class="form-label">Mensaje</label>
+          <textarea id="contactoMensaje" name="contactoMensaje" class="form-control" rows="5"
+            placeholder="Cuentanos como podemos ayudarte"></textarea>
+        </div>
+        <button class="btn btn-accent mt-3" type="submit">Enviar mensaje</button>
+        <div id="mensajeContacto" class="form-message mt-3" role="alert"></div>
+      </form>
     </section>
   </main>
 
-  <!-- Pie de página con enlaces sociales -->
-  <footer>
-    <div class="container footer-inner">
-      <small>© 2026 IT Progs. Todos los derechos reservados.</small>
-      <nav aria-label="Redes sociales" class="footer-nav">
-        <ul>
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 py-3">
+      <small>&copy; 2026 IT Progs. Todos los derechos reservados.</small>
+      <nav aria-label="Redes sociales">
+        <ul class="footer-nav">
           <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></li>
           <li><a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a></li>
           <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -167,7 +262,6 @@
       </nav>
     </div>
   </footer>
-  <script src="js/app.js"></script>
 </body>
 
 </html>
