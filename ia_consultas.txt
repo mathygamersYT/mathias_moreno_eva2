@@ -1,0 +1,17 @@
+Consulta 1 - Validaciones JavaScript:
+"Actua como desarrollador web senior. Necesito validar tres formularios en JavaScript puro, sin depender solo de HTML5. Incluye revision de campos vacios, correo con Regex fuerte, bloqueo basico de texto peligroso como etiquetas script y mensajes claros para el usuario."
+
+Consulta 2 - Carrusel manual:
+"Actua como tutor de programacion frontend. Explicame como crear un carrusel con apariencia de Bootstrap 5, pero sin usar la automatizacion de Bootstrap. Los botones Anterior y Siguiente deben llamar a una funcion cambiarImagen() que modifique src, alt, titulo y texto desde un arreglo de objetos."
+
+Consulta 3 - Estructura DOM:
+"Actua como evaluador academico. Revisa que una pagina de Hardware PC Gaming y Homelab use etiquetas semanticas header, nav, main, section y footer, tres formularios con label for e id, un arreglo global de usuarios, una clase Usuario y funciones llamadas validarDatos(), cambiarImagen() y actualizarDOM()."
+
+Consulta 4 - Login y JSON:
+"Actua como desarrollador web senior. Necesito convertir el login en una ventana emergente abierta desde el boton superior derecho, ocultar el listado publico de usuarios registrados y guardar las inscripciones en un archivo usuarios.json mediante una API local sencilla."
+
+Consulta 5 - Registro sin servidor:
+"Actua como desarrollador frontend. Necesito que Registro y Login sean ventanas emergentes en el navbar y que el registro actualice usuarios.json sin servidor local, usando JavaScript puro y permisos del navegador para seleccionar y escribir el archivo JSON."
+
+Consulta 6 - Servidor local y carrusel:
+"Actua como desarrollador web senior. Necesito mover el carrusel manual al hero junto a Bienvenido a IT Progs, crear un servidor local con Node que sirva la pagina sin cache y que permita leer/escribir usuarios.json desde JavaScript."
