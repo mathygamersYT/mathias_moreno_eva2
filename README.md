@@ -35,7 +35,7 @@ Estos son los archivos principales que usa la pagina:
 - Popup de registro.
 - Popup de login.
 - Formulario de contacto.
-- Validacion manual de campos vacios, correo y texto peligroso basico.
+- Validacion manual de campos vacios, correo, texto peligroso basico y fortaleza de contraseñas (mínimo 8 caracteres, al menos 1 mayúscula y 1 carácter especial).
 - Arreglo global `usuariosInscritos`.
 - Clase `Usuario`.
 - Funciones requeridas: `validarDatos()`, `cambiarImagen()` y `actualizarDOM()`.
