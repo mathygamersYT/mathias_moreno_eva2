@@ -160,9 +160,13 @@ function validarDatos(formulario) {
   });
 
   const password = formulario.querySelector('input[type="password"]');
-  if (password && password.value.trim().length < 8) {
-    errores.push("La contrasena debe tener al menos 8 caracteres.");
-    marcarCampoInvalido(password);
+  if (password) {
+    const pwd = password.value.trim();
+    const pwdRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*()_\-+=\[\]{};:'",.<>\/\?\\|`~]).{8,}$/;
+    if (!pwdRegex.test(pwd)) {
+      errores.push("La contraseña debe tener al menos 8 caracteres, una mayúscula y un carácter especial.");
+      marcarCampoInvalido(password);
+    }
   }
 
   return {
