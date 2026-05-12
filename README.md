@@ -26,8 +26,6 @@ Estos son los archivos principales que usa la pagina:
 `-- README.md
 ```
 
-No se usan carpetas `css/` ni `js/` para la version final, porque la rubrica pide separar el codigo directamente en `index.html`, `styles.css` y `script.js`.
-
 ## Funcionalidades
 
 - Carrusel visual con Bootstrap 5, controlado manualmente con JavaScript puro.
