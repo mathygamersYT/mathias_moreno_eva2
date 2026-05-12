@@ -6,6 +6,7 @@ const PORT = 3000;
 const ROOT = __dirname;
 const DATA_FILE = path.join(ROOT, "usuarios.json");
 
+// Mapa minimo de tipos MIME para servir los archivos del proyecto sin instalar dependencias.
 const mimeTypes = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -19,21 +20,25 @@ const mimeTypes = {
 };
 
 function asegurarUsuariosJson() {
+  // Si el archivo no existe, se crea vacio para que el registro tenga donde persistir datos.
   if (!fs.existsSync(DATA_FILE)) {
     fs.writeFileSync(DATA_FILE, "[]", "utf8");
   }
 }
 
 function leerUsuarios() {
+  // Lectura centralizada para que GET y POST usen siempre la misma fuente de datos.
   asegurarUsuariosJson();
   return JSON.parse(fs.readFileSync(DATA_FILE, "utf8") || "[]");
 }
 
 function guardarUsuarios(usuarios) {
+  // Escritura con formato legible para que el profesor pueda abrir usuarios.json y revisar registros.
   fs.writeFileSync(DATA_FILE, JSON.stringify(usuarios, null, 2), "utf8");
 }
 
 function responderJSON(respuesta, estado, datos) {
+  // no-store permite recargar y ver cambios recientes sin pelear con la cache del navegador.
   respuesta.writeHead(estado, {
     "Content-Type": "application/json; charset=utf-8",
     "Cache-Control": "no-store"
@@ -55,6 +60,7 @@ function leerCuerpo(peticion) {
 }
 
 async function manejarAPI(peticion, respuesta) {
+  // API local usada por script.js para leer y guardar usuarios desde el frontend.
   if (peticion.url === "/api/usuarios" && peticion.method === "GET") {
     responderJSON(respuesta, 200, leerUsuarios());
     return;
@@ -79,6 +85,7 @@ async function manejarAPI(peticion, respuesta) {
 }
 
 function servirArchivo(peticion, respuesta) {
+  // Servidor estatico sencillo: permite abrir la evaluacion desde localhost.
   const urlLimpia = decodeURIComponent(peticion.url.split("?")[0]);
   const rutaSolicitada = urlLimpia === "/" ? "/index.html" : urlLimpia;
   const rutaArchivo = path.normalize(path.join(ROOT, rutaSolicitada));
@@ -106,6 +113,7 @@ function servirArchivo(peticion, respuesta) {
 }
 
 const servidor = http.createServer(async (peticion, respuesta) => {
+  // Separamos rutas API de archivos para mantener claro el flujo de datos.
   try {
     if (peticion.url.startsWith("/api/")) {
       await manejarAPI(peticion, respuesta);

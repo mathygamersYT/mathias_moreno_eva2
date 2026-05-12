@@ -1,9 +1,9 @@
-// Arreglo global solicitado por la rubrica: aqui se cargan y almacenan los usuarios inscritos.
+// Estado de la aplicacion: se carga desde usuarios.json y se usa para validar registro/login en memoria.
 const usuariosInscritos = [];
 const API_USUARIOS = "/api/usuarios";
 const STORAGE_KEY = "itProgsUsuarios";
 
-// Clase solicitada para representar usuarios con una estructura clara.
+// Modelo simple de usuario. En una app real la contrasena se guardaria con hash en backend.
 class Usuario {
   constructor(nombre, email, password, interes) {
     this.id = Date.now();
@@ -38,6 +38,7 @@ const imagenesCarrusel = [
 
 let indiceImagenActual = 0;
 
+// Punto de arranque: primero se conectan eventos, luego se cargan datos y se pinta el DOM.
 document.addEventListener("DOMContentLoaded", async () => {
   configurarMenuMovil();
   configurarPopups();
@@ -56,6 +57,7 @@ function configurarMenuMovil() {
   });
 }
 
+// Centraliza los popups para mantener Registro y Login con el mismo comportamiento.
 function configurarPopups() {
   document.getElementById("abrirLogin").addEventListener("click", () => abrirPopup("loginPopup", "loginEmail"));
   document.getElementById("cerrarLogin").addEventListener("click", () => cerrarPopup("loginPopup"));
@@ -84,6 +86,7 @@ function configurarFormularios() {
   document.getElementById("formContacto").addEventListener("submit", procesarContacto);
 }
 
+// Entrada de datos desde el JSON: el servidor local evita depender de archivos seleccionados manualmente.
 async function cargarUsuarios() {
   try {
     const respuesta = await fetch(API_USUARIOS, { cache: "no-store" });
@@ -100,6 +103,7 @@ async function cargarUsuarios() {
   }
 }
 
+// Salida de datos hacia usuarios.json: POST al servidor local y respaldo local solo si se abre sin servidor.
 async function guardarUsuario(nuevoUsuario) {
   try {
     const respuesta = await fetch(API_USUARIOS, {
@@ -121,7 +125,7 @@ async function guardarUsuario(nuevoUsuario) {
   }
 }
 
-// Funcion requerida por la rubrica: valida campos vacios, correo y reglas basicas de seguridad.
+// Validacion manual: no se confia solo en HTML5 para cumplir la rubrica y controlar mensajes propios.
 function validarDatos(formulario) {
   const campos = Array.from(formulario.querySelectorAll("input, textarea, select"));
   const errores = [];
@@ -165,6 +169,7 @@ function validarDatos(formulario) {
   };
 }
 
+// Registro: valida, evita correos repetidos y persiste el nuevo usuario en usuarios.json.
 async function procesarInscripcion(evento) {
   evento.preventDefault();
   const formulario = evento.target;
@@ -208,6 +213,7 @@ async function procesarInscripcion(evento) {
   }
 }
 
+// Login: compara contra los usuarios cargados desde JSON y muestra una salida limpia sin contrasena.
 function procesarLogin(evento) {
   evento.preventDefault();
   const formulario = evento.target;
@@ -236,6 +242,7 @@ function procesarLogin(evento) {
   salida.value = `Salida JSON: ${JSON.stringify(sinPassword(usuario))}`;
 }
 
+// Contacto no persiste datos; solo demuestra validacion independiente para el tercer formulario.
 function procesarContacto(evento) {
   evento.preventDefault();
   const formulario = evento.target;
@@ -271,6 +278,7 @@ function actualizarDOM() {
   actualizarCarrusel();
 }
 
+// Render del carrusel: modifica src, alt, titulo, texto, contador e indicadores desde el arreglo.
 function actualizarCarrusel() {
   const imagen = imagenesCarrusel[indiceImagenActual];
   const imagenDOM = document.getElementById("imagenCarrusel");
@@ -299,6 +307,7 @@ function actualizarCarrusel() {
   });
 }
 
+// Abre una capa flotante y manda el foco al primer campo para mejorar el flujo del usuario.
 function abrirPopup(idPopup, idPrimerCampo) {
   const popup = document.getElementById(idPopup);
   popup.classList.add("is-open");
@@ -306,6 +315,7 @@ function abrirPopup(idPopup, idPrimerCampo) {
   document.getElementById(idPrimerCampo).focus();
 }
 
+// Cierra el popup sin borrar datos, por si el usuario lo abrio por error.
 function cerrarPopup(idPopup) {
   const popup = document.getElementById(idPopup);
   popup.classList.remove("is-open");
@@ -334,11 +344,13 @@ function mostrarMensaje(elemento, texto, tipo) {
   elemento.className = `form-message mt-3 ${tipo}`;
 }
 
+// Evita mostrar la contrasena en mensajes de salida del login.
 function sinPassword(usuario) {
   const { password, ...datosPublicos } = usuario;
   return datosPublicos;
 }
 
+// Respaldo para pruebas abriendo index.html directamente, aunque el flujo recomendado es node server.js.
 function guardarEnLocalStorage(nuevoUsuario) {
   const usuariosLocales = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
 

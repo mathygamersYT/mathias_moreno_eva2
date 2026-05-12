@@ -1,4 +1,5 @@
 :root {
+  /* Paleta oscura coherente con la version original del sitio IT Progs. */
   --accent: #00bfa5;
   --accent-hover: #00897b;
   --bg: #0f1117;
@@ -52,6 +53,7 @@ body {
 }
 
 .nav-actions {
+  /* Acciones de cuenta siempre visibles: Registro y Login quedan al nivel del logo. */
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -62,6 +64,7 @@ body {
 }
 
 .hero {
+  /* Bloque de bienvenida original, ahora con el carrusel integrado al costado. */
   padding: 4rem 0;
   background: linear-gradient(180deg, #0d1e2c 0%, var(--bg) 100%);
 }
@@ -130,6 +133,7 @@ section h2 {
 }
 
 .login-popup {
+  /* Capa reutilizable para Login y Registro; evita duplicar estilos de modal. */
   position: fixed;
   inset: 0;
   z-index: 2000;
@@ -145,6 +149,7 @@ section h2 {
 }
 
 .popup-panel {
+  /* Panel compacto para formularios cortos, con scroll interno en pantallas pequenas. */
   width: min(420px, 100%);
   max-height: calc(100vh - 6.5rem);
   overflow-y: auto;
@@ -176,6 +181,7 @@ section h2 {
 }
 
 .registro-feedback {
+  /* Mensaje final simple: reemplaza la salida tecnica para que el registro se sienta natural. */
   min-height: 1.5rem;
   margin: 1rem 0 0;
   color: var(--accent);
@@ -188,6 +194,7 @@ section h2 {
 }
 
 .manual-carousel {
+  /* Solo usamos la apariencia de Bootstrap; la navegacion se maneja manualmente en script.js. */
   overflow: hidden;
   background: #000;
   border: 1px solid var(--border);
