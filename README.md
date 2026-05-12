@@ -57,6 +57,37 @@ http://localhost:3000
 
 El servidor entrega la pagina y habilita la ruta `/api/usuarios` para leer y escribir en `usuarios.json`.
 
+**Cómo levantar el proyecto (paso a paso)**
+
+- **Iniciar servidor:** desde la carpeta del proyecto ejecuta:
+
+```bash
+node server.js
+```
+
+- **Abrir la web:** visita `http://localhost:3000` en tu navegador.
+
+- **Comprobar la API (GET):**
+
+```bash
+curl -i http://localhost:3000/api/usuarios
+
+
+```bash
+curl -i -X POST http://localhost:3000/api/usuarios \
+	-H "Content-Type: application/json" \
+	-d '{"nombre":"Prueba","email":"prueba@example.com","password":"Passw0rd!","interes":"testing","id":123,"fechaRegistro":"2026-05-12"}'
+```
+
+- **Ubicación del archivo de datos:** los usuarios se persisten en [usuarios.json](usuarios.json) en la raíz del proyecto.
+
+- **Nota sobre el frontend y `localStorage`:** si el servidor no responde (por ejemplo no está levantado o hay un error de red), el frontend guarda temporalmente los usuarios en `localStorage` del navegador. Si ves usuarios en la UI pero [usuarios.json](usuarios.json) sigue vacío, asegúrate de que el servidor esté corriendo y registra el usuario nuevamente, o borra el `localStorage` para forzar la escritura en el servidor.
+
+**Diagnóstico rápido**
+
+- Si `curl` a `/api/usuarios` devuelve un error, revisa la consola donde ejecutaste `node server.js` para ver mensajes de arranque o errores.
+- Para limpiar el respaldo local en el navegador: abre DevTools → Application → Local Storage → elimina la clave `itProgsUsuarios`.
+
 ## Evidencia IA
 
 El archivo `ia_consultas.txt` contiene los prompts simulados usados para crear las validaciones, el carrusel y los ajustes principales del proyecto.
